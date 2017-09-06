@@ -1,0 +1,336 @@
+.flash_messages li{color: #000000;}
+html{font-family: 'Open Sans', sans-serif;
+background-image: url(../static/background.png);
+background-size:cover;
+margin:0px;
+}
+
+.video_desktop{
+border-style: solid;
+display: inline-block;
+vertical-align: top;
+}
+
+body{margin:0px;font-family: 'Open Sans', sans-serif;
+}
+a{    text-decoration: none;}
+.one{background-color: #1a1a1a;padding-top:5px;padding-bottom:5px;
+height: 40px;padding-right:10px;padding-left:10px;
+}
+.flags{        display: inline-block;  float: right;   }
+.flags a{color:#fff;font-size:14px;font-family: 'Open Sans', sans-serif;}
+.logo{        display: block;        text-align: center;     padding-top: 30px;
+padding-bottom: 20px;          }
+.body{max-width:75%; position:relative;margin:auto;}
+p{color:#fff;    margin: 0px;}
+h2{    text-align: center;font-family: 'Open Sans', sans-serif;
+color: #fff;    font-size: 36px;    margin: 0px;}
+
+button.blue{
+padding: 15px 10px 15px 10px;
+    background-color: #33afad;
+    width: 140px;
+	margin:auto;
+}
+
+
+
+#account_balance{
+	
+	    margin: auto;
+    background-color: #33afad;
+    padding: 6px 0px 6px 0px;
+    width: 30%;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}/**#notify{    text-align: center;width:600px; margin:auto;background-color:#d74a50;padding:25px;} **/
+#notify{      text-align: center;
+    width: 271px;
+    margin: auto;margin-bottom:5px;
+    background-color: rgba(215, 74, 80, 0);    padding: 11px;}
+#notifyy{      text-align: center;
+    width: 271px;
+    margin: auto;margin-bottom:5px;
+    background-color: #dd4b39;
+    padding: 5px;}
+#back{text-align: center;
+    width: 271px;
+    margin: auto;margin-bottom:5px;
+    background-color: #d74a50;
+    padding: 11px;}
+input.email, input.password{padding: 9px;    font-size: 14px;    background: #ffffff;    border: 0px;
+width: 200px;	}
+input.submit{color: #fff;    background: #33afaf;    padding: 10px 30px 10px 30px;border: 0px;}
+
+
+ifram{border:0px;}
+
+.itemDiv{
+border: 1px solid #494949;
+display: inline-block;
+margin-bottom: 20px;
+padding: 0px;
+margin-left: 10px;
+margin-right: 10px;
+
+
+}
+#userbox{background: #9d9d9d;
+    padding: 2px 13px 2px 10px;
+    margin-right: 35px;
+}
+.product_title{
+background-color:#0c344b;
+color: #fff;
+padding: 5px;
+}
+.container-fluid{
+margin-top: 50px;
+
+}
+.emailindex{
+height: 35px;
+border: aliceblue;
+width: 220px;
+padding-left: 8px;
+}
+div#login_container{	width: 269px;    margin: auto;    background: #ededed;
+padding: 25px;    text-align: center;    color: black;    top: 1%;    position: relative;	
+
+}
+button{	    width: 100px;
+padding: 6.8px;    border: 0px;    background: black;    color: #fff;    vertical-align: top;
+}
+ul li{     line-height: 34px;color:#fff;font-size:15px;font-family: 'Open Sans', sans-serif;}
+footer{                    vertical-align: top;
+width: 88%;    margin: auto;
+display: block;    padding-left: 10px;    padding-right: 10px;
+text-align: center; 
+margin-top: 20px;
+margin-bottom: 20px;	
+}
+img.footer{height: 50px;
+padding-left: 10px;
+padding-right: 10px;
+vertical-align: top;
+}
+img.products{
+width: 290px;
+height: 180px;	
+}
+p.black, a.black{color:black;}
+.video_mobile{
+display:none;}
+}
+
+input.number{
+	padding: 4px;
+}
+input.submitproduct{
+background: #4d4d4d;
+color: #fff;
+padding: 5px 30px 5px 30px;
+}
+
+.mainco p {padding:0px 20px 0px 20px;color:black;}
+.mainco{    vertical-align: top;
+margin-right: 20px;
+background-color: white;
+display: inline-block;
+width: 40%;
+
+}
+
+.two{    margin-top: 30px;
+
+text-align: center;
+}
+.blue{padding:15px 0px 15px 0px;
+background-color: #33afad;
+}
+
+@media only screen and (max-device-width: 480px) {
+	
+	.video_desktop{
+display:none;}
+
+.video_mobile{
+
+border-style: solid;
+display: inline-block;
+vertical-align: top;
+}
+
+	ul{padding:0px 0px 0px 21px}
+	ul li {
+    line-height: 21px;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 22px;
+}
+	.one {
+    background-color: #1a1a1a;
+    padding-top: 5px;
+    /* padding-bottom: 5px; */
+    /* height: 74px; */
+    /* padding-right: 10px; */
+    padding-left: 10px;
+    width: 100%;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+	.body{max-width: 99%;
+	}
+	footer{display:block}
+	img.footer{height: 35px;
+margin-bottom: 10px;
+ 
+}
+#account_balance{
+	width: 97%;
+}
+
+.mainco {
+    vertical-align: top;
+    margin-right: 0px;
+    background-color: white;
+    display: block;
+    width: 95%;
+    margin: auto;
+}
+#userbox{
+	    margin-bottom: 20px;
+
+}
+	
+	
+	
+	
+	}
+/**
+li{color:#FFFFFF;}
+
+iframe {
+text-align: center;
+width: 45%;
+position: relative;
+left:25%;
+height: 95%;
+margin-top: 20px;
+margin-bottom: 30px;
+
+-moz-border-radius: 12px;
+-webkit-border-radius: 12px;
+border-radius: 12px;
+
+-moz-box-shadow: 4px 4px 14px #000;
+-webkit-box-shadow: 4px 4px 14px #000;
+box-shadow: 4px 4px 14px #000;
+
+
+} 
+
+.chart-container {
+background-color: #e1e1e8;
+padding: 10px 20px;
+}
+video{z-index: 110;}
+
+#languageBar{
+text-align:right;
+font-size: 20px;
+}
+
+footer{background-color: #D7DBDB; text-align: center;}
+
+
+#product_url{
+text-align: center;
+}
+
+#notify{
+text-align: center;
+}
+
+
+#myCarousel-inner > .item > img {
+margin: 0 auto;
+width: 50%;
+}
+
+#myCarousel{
+margin: auto;
+
+}
+
+.item img{
+opacity:.6;
+width: 100%;
+top:0;
+}
+
+button{background-color: #D4303C;}
+
+input{
+color:#000000;
+}
+
+@font-face {
+font-family: meetFont;
+src: url(ProximaNova.otf);
+}
+
+@font-face{
+font-family: meetTitleFont;
+src: url(ProximaNovaScOsfRegular.otf);
+}
+
+body{ font-family:meetFont; text-decoration-color:none; padding:4px; margin:4px;}
+li{font-family:meetFont; font-style: bold; color:#FFFFFF; text-align: left ;font-size: 25px;}
+a{font-family:meetFont; color:#FFFFFF; text-decoration: none;}
+h1{font-family:meetTitleFont; color:#FFFFFF;font-size: 50px; text-align: center;}
+h2{font-family:meetFont; font-style: bold; font-size: 40px; color: #FFFFFF;text-align: center;}
+h3{font-family:meetFont; color:#FFFFFF;}
+h4{font-family:meetFont;}
+p{font-family: meetFont; color:#FFFFFF; font-size: 20px;}
+.flash_messages li{
+color: #000000;
+font-family:meetFont;
+font-size: 25px;
+
+}
+
+#login_container{
+text-align: center;
+
+}
+
+#signupcontainer{
+text-align: center;
+}
+#loginModal{z-index: 2;}
+#loginModal p{color:black;}
+ul {
+line-height: 500%;
+
+
+}
+
+**/
+Y3 Accelerator Crowd Funding Campaign: Proxima Nova ScOsf, size 70
+Languages: English: Proxima Nova Alt, Hebrew: Open Sans Hebrew, size 40
+How it works: Proxima Nova (Bold), size 50
+Text: Proxima Nova Alt (Bold), size 44
+Notify me...: Proxima Nova Alt (Bold), size 35
+Submit: Proxima Nova Alt (Bold), size 30
+
+
+RED - #D4303C
+NAVY - #0C344B
+BLUE - #27A1A1
+
+GREY - #D7DBDB

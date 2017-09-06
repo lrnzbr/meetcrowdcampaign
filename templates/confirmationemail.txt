@@ -1,0 +1,12 @@
+Hi {{ user.first_name }}!,
+
+Your confirmation code is {{user.confirmation_code}}. This code will expire in 10 minutes. 
+
+You can verify your code on the kickstarter website by clicking the link below.
+
+Confirm your acccount here
+{{ url_for('verify', email=user.email|string , _external=True)}}>
+
+Happy Investing!
+
+MEET Y3 Accelerator Staff 

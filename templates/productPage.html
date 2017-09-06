@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if session['language'] == 'he' %}
+<div class="two">
+<a href="/products">
+<div id="notifyy">
+
+חזור לרשימת הקבוצות
+
+</div>
+</a>
+<div class=" mainco">
+<h1>{{product.team.name}}</h1>
+
+
+<p>
+{{product.description_he}}
+</p>
+
+
+{%if product.website_url != None %}
+<div id="product_url">
+<p><a href={{product.website_url}} target="_blank">{{product.website_url}}</a></p><br>
+</div>
+{%endif%}
+
+{% if session['group'] == 'silver' or session['group'] == 'gold'%}
+<div class="blue">
+<form action = "{{url_for('addComment', team_id = product.team_id)}}" method = 'post'>
+<textarea name='commentary'>אנא השאר תגובה או ביקורת לקבוצה כאן.</textarea><br>
+<input type='submit', value = 'שלח'>
+</form>
+</div>
+{%endif%}
+
+<div class="blue">
+<form action="{{ url_for('makeAnInvestment', product_id = product.id) }}" method = 'post'><br>
+<p>האם ברצונך להשקיע בסטרט-אפ זה? הגדר השקעתך למטה:</p><br>
+<input class="number" type="number" name="amount">   <input type="submit" class="submitproduct"  value="שלח">
+</form>
+</div>
+
+</div>
+<div class="video_desktop">
+<iframe width="600" height="334" src="{{product.video}}">
+</iframe>
+</div>
+<div class="video_mobile">
+<iframe width="304" height="170" src="{{product.video}}">
+</iframe>
+</div>
+</div>
+{% elif session['language'] == 'ar' %}
+<div class="two">
+<a href="/products">
+<div id="notifyy">
+
+العودة لقائمة المجموعات
+
+</div>
+</a>
+
+<div class=" mainco">
+<h1>{{product.team.name}}</h1>
+
+
+<p>
+{{product.description_ar}}
+</p>
+
+
+
+{%if product.website_url != None %}
+<div id="product_url">
+<p><a href={{product.website_url}} target="_blank">{{product.website_url}}</a></p><br>
+</div>
+{%endif%}
+
+{% if session['group'] == 'silver' or session['group'] == 'gold'%}
+<div class="blue">
+<form action = "{{url_for('addComment', team_id = product.team_id)}}" method = 'post'>
+<textarea name='commentary'>من فضلك قم بترك ملاحظاتك و تعليقاتك لهذا الفريق هنا</textarea><br>
+<input type='submit', value = 'Submit Comment'>
+</form>
+</div>
+{%endif%}
+
+<div class="blue">
+<form action="{{ url_for('makeAnInvestment', product_id = product.id) }}" method = 'post'><br>
+<p>هل تريد الإستثمار في هذا المشروع ؟ حدد مقدار الإستثمار الذي تريده هنا </p><br>
+<input class="number" type="number" name="amount">   <input type="submit" class="submitproduct" value="أرسل">
+</form>
+</div>
+</div>
+<div class="video_desktop">
+<iframe width="600" height="334" src="{{product.video}}">
+</iframe>
+</div>
+<div class="video_mobile">
+<iframe width="304" height="170" src="{{product.video}}">
+</iframe>
+</div>
+</div>
+{% else %}
+
+<div class="two">
+<a href="/products">
+<div id="notifyy">
+
+Back to List of Groups
+
+</div>
+</a>
+
+<div class=" mainco">
+<h1>{{product.team.name}}</h1>
+<p>
+{{product.description_en}}
+</p>
+
+{%if product.website_url != None %}
+<div id="product_url">
+<p><a href={{product.website_url}} target="_blank">{{product.website_url}}</a></p><br>
+</div>
+{%endif%}
+
+{% if session['group'] == 'silver' or session['group'] == 'gold'%}
+<div class="blue">
+<form action = "{{url_for('addComment', team_id = product.team_id)}}" method = 'post'>
+<textarea name='commentary'>Please leave commentary or feedback for this team here.</textarea><br>
+<input type='submit', value = 'Submit Comment'>
+</form>
+</div>
+{%endif%}
+<div class="blue">
+<form action="{{ url_for('makeAnInvestment', product_id = product.id) }}" method = 'post'>
+<p>Would you like to invest in this startup? <br>Specify your investment amount below:</p>
+<input class="number" type="number" name="amount"/>   <input type="submit" class="submitproduct"  value="submit"/>
+</form>
+</div>
+</div> 
+<div class="video_desktop">
+<iframe width="600" height="334" src="{{product.video}}">
+</iframe>
+</div>
+<div class="video_mobile">
+<iframe width="304" height="170" src="{{product.video}}">
+</iframe>
+</div>
+</div>
+{%endif%}
+
+{%endblock%}

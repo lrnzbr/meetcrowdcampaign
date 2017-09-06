@@ -1,0 +1,156 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    
+    
+
+
+
+    <link rel="icon" type="image/png" href="http://meet.mit.edu/wp-content/themes/costa/img/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://meet.mit.edu/wp-content/themes/costa/img/icons/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="http://meet.mit.edu/wp-content/themes/costa/img/icons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="http://meet.mit.edu/wp-content/themes/costa/img/icons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="http://meet.mit.edu/wp-content/themes/costa/img/icons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="http://meet.mit.edu/wp-content/themes/costa/img/icons/manifest.json">
+    <link rel="shortcut icon" href="http://meet.mit.edu/wp-content/themes/costa/img/icons/favicon.ico">
+
+<title>MEET Y3 Accelerator Crowd Funding Campaign</title>
+
+
+
+
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='w3.css')}}">
+
+
+
+
+</head>
+
+  <body>
+
+    
+
+<script src="//code.jquery.com/jquery-latest.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+
+<!--Language Bar -->
+<div class="one">
+   <div class="flags">
+   <a href="{{url_for('changeLanguage', language = 'ar')}}">العربية</a>
+
+<a href="{{url_for('changeLanguage', language = 'en')}}">English</a>
+
+<a href="{{url_for('changeLanguage', language = 'he')}}">עברית</a>
+</div>
+	
+	
+      {% if 'id' in session %}
+	  <div class="flags" id="userbox">
+      {%if session['language'] == 'he'%}
+            <p> .{{session['first_name']}} הנך כרגע רשום כ 
+        
+         <a href = "{{url_for('logout')}}">התנתק </a></p>
+       
+      {%elif session['language']=='ar'%}
+            <p>  .{{session['first_name']}} تم تسجيل الدخول بإسم 
+        
+         <a href = "{{url_for('logout')}}">تسجيل الخروج</a></p>
+     
+      {%else%}
+      <p> You are currently signed in as {{session['first_name']}}.
+      	
+      	 <a href = "{{url_for('logout')}}">Log Out</a></p>
+      
+
+{%endif%}
+</div> 
+{%endif%}
+ 
+
+</div> 
+<!-- End Language Bar -->
+
+
+<!--Title Container-->
+
+
+<div class="logo">
+       <img src = "{{url_for('static', filename='meet_logo_1.png')}}" alt="Meet_Logoredv" style="    max-height: 50px;">
+
+       <h2>Y3 Accelerator Crowd Funding Campaign</h2>
+</div>
+
+	<div class = "body">
+
+{% if wallet is defined and wallet.current_value is defined%}
+<div id='account_balance'>
+{% if session['language'] == 'he'%}
+<p> יתרת חשבונך כרגע הוא:{{"${:,.2f}".format(wallet.current_value)}}</p>
+
+{%elif session['language'] == 'ar'%}
+<p> رصيدك الحالي : {{"${:,.2f}".format(wallet.current_value)}}</p>
+
+{%else%}
+<p> Your Current Balance: {{"${:,.2f}".format(wallet.current_value)}}</p>
+
+{%endif%}
+</div>
+{%endif%}
+ 
+
+
+<!--Flash Messaging --> 
+		<div class=" w3-container w3-pale-blue flash_messages">
+      {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li> <strong> {{ message }} </strong> <span class="w3-closebtn" onclick="this.parentElement.style.display='none'">X</span> </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+{% endwith %}
+		</div>
+<!-- End FLash Messaging --> 
+	
+
+
+</div> 
+
+    {% block body %}
+
+
+    {% endblock %}
+  
+
+
+
+<footer >
+<a href="http://meet.mit.edu">
+<img class = "footer" src = "{{url_for('static', filename='meet_logo_21.png')}}" height=40px></a>
+
+<img class = "footer" src = "{{url_for('static', filename='Y3Accelerator1.png')}}" height=100px>
+
+<img class = "footer" src = "{{url_for('static', filename='usaid1.png')}}" height=110px>
+
+
+</footer>
+
+  </body>
+</html>

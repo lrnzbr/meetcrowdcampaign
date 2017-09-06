@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+{% if session['language'] == 'he' %}
+<h1>אנא הכנס את קוד הווידוא<h1>
+	<form action = "{{url_for('verify', email = user.email|string)}}", method = 'post'>
+<input type="text" name="code">
+<input type="submit" value="שלח">
+	</form>
+{% elif session['language'] == 'ar' %}
+<h1>من فضلك قم بإدخال كود التفعيل الخاص بك<h1>
+	<form action = "{{url_for('verify', email = user.email|string)}}", method = 'post'>
+<input type="text" name="code">
+<input type="submit" value="أرسل">
+	</form>
+{% else %}
+
+
+<h1>Please Enter your account verification code<h1>
+	<form action = "{{url_for('verify', email = user.email|string)}}", method = 'post'>
+<input type="text" name="code">
+<input type="submit" value="submit">
+	</form>
+{% endif %}
+
+
+{%endblock%}

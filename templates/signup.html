@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if session['language'] == 'he'%}
+<div class="body">
+<h2> הירשם כמשתמש חדש</h2>
+<div id="login_container">
+<form action = "{{url_for('signup')}}", method = 'post'>
+
+<p class="black">	:שם</p>
+  <input type="text" name="first_name"><br>
+
+<p class="black">:שם משפחה</p>
+  <input type="text" name="last_name"><br>
+<p class="black">:סיסמא</p>
+  <input type="password" name="password"><br>
+<p class="black">:וודא סיסמא</p>
+  <input type="password" name="verify_password"><br>
+<p class="black">:עיר מגורים</p>
+  <input type="text" name="hometown"><br>
+<p class="black">:כתובת אימייל</p>
+  <input type="email" name="email"><br>
+  
+
+   <input class="submit" type="submit" value="הירשם">
+
+
+</form>
+</div>
+</div>
+{%elif session['language']=='ar'%}
+<div class="body">
+<h2> سجل الدخول كمستخدم جديد</h2>
+<div id="login_container">
+<form action = "{{url_for('signup')}}", method = 'post'>
+
+<p class="black">:الأسم</p>
+  <input type="text" name="first_name"><br>
+
+<p class="black">:أسم العائلة</p>
+  <input type="text" name="last_name"><br>
+<p class="black">:كلمة السر</p>
+  <input type="password" name="password"><br>
+<p class="black">:أكد كلمة السر</p>
+  <input type="password" name="verify_password"><br>
+<p class="black">:البلدة</p>
+  <input type="text" name="hometown"><br>
+<p class="black">:البريد الإلكتروني</p>
+  <input type="email" name="email"><br>
+  
+
+   <input class="submit" type="submit" value="سجل الدخول">
+
+
+</form>
+</div>
+</div>
+
+{% else %}
+<h2> Sign Up as a New User</h2>
+<div id="login_container">
+<form action = "{{url_for('signup')}}", method = 'post'>
+
+<p class="black">First Name:</p>
+  <input type="text" name="first_name"><br>
+
+<p class="black">Last Name:</p>
+  <input type="text" name="last_name"><br>
+<p class="black">Password:</p>
+  <input type="password" name="password"><br>
+<p class="black">Verify Password:</p>
+  <input type="password" name="verify_password"><br>
+<p class="black">Hometown:</p>
+  <input type="text" name="hometown"><br>
+<p class="black">Email:</p>
+  <input type="email" name="email"><br>
+  
+
+   <input class="submit" type="submit" value="Sign Up">
+
+
+</form>
+</div>
+
+{% endif %}
+
+{%endblock%}

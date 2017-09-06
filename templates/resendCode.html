@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if session['language'] == 'ar'%}
+<p>أنقر على المربع في الأسفل من إجل إعادة إرسال كود التفعيل {{email}}</p>
+
+<form action="{{url_for('resendCode', email = email)}}"method = 'post'>
+	<input type='submit' value='أرسل الكود'>
+</form>
+{%elif session['language'] == 'he'%}
+<p>הקלק על הכפתור להלן על מנת לשלוח מחדש את קוד האישור {{email}}</p>
+
+<form action="{{url_for('resendCode', email = email)}}"method = 'post'>
+	<input type='submit' value='שלח קוד מחדש '>
+</form>
+{%else%}
+<p>Click the button below to resend the confirmation code to {{email}}.</p>
+
+<form action="{{url_for('resendCode', email = email)}}"method = 'post'>
+	<input type='submit' value='Resend Code'>
+</form>
+{%endif%}
+{%endblock%}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+	<div class="body">
+{% if products==[]%}
+<p> There are currently no projects in the database. </p>
+{% else %}
+<div class="container-fluid">
+  {% for product in products %}
+  {%if loop.index0 % 3 == 0 %}
+  <div class="row">
+    {% endif %}
+    <div class="itemDiv">
+ <a href={{url_for('showProduct', product_id = product.id)}}>
+   
+    <img class="products" src="{{product.photo}}"/>
+	<div class="product_title">{{product.team.name}}</div>
+</a>
+        </div>
+
+
+  {% if loop.index0 % 3 == 2%}
+</div>
+{% endif %}
+  {% endfor %}
+  {%endif%}
+
+  </div>
+
+{%endblock%}
+
+</div>
